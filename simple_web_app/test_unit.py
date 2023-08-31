@@ -69,4 +69,8 @@ def test_8_chars_with_no_upper_case_password_should_raise_exception():
         validator.password_validate()
 
 def test_8_chars_with_slash_should_raise_exception():
-    pass
+    # given
+    validator = PasswordValidator(content="1@Ab/@Ab")
+    with pytest.raises(Exception):  # then
+        # when
+        validator.password_validate()
